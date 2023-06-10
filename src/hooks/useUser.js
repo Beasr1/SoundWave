@@ -22,8 +22,9 @@ export const MyUserContextProvider = (props) => {
     supabase
       .from("subscriptions")
       .select("*,prices(*,products(*))")
-      .in("status", ["trialing", "active"])
-      .single();
+      .in("status", ["trialing", "active"]);
+  //.single();
+  //single throws error when none retuned or multiple
 
   useEffect(() => {
     if (user && !isLoadingData && !userDetails && !subscription) {

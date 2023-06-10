@@ -4,12 +4,15 @@ const {
 import { cookies } from "next/headers";
 import getSongs from "./getSongs";
 
-const getSongsByTitle = async ({ title = "" }) => {
+const getSongsByTitle = async ({ title }) => {
+  //console.log(title);
   const supabase = createServerComponentClient({
     cookies: cookies,
   });
 
   if (!title) {
+    //if empty then undefined
+    //console.log("Getting all songs"); //had to dry run this again
     const allSongs = await getSongs();
     return allSongs;
   }

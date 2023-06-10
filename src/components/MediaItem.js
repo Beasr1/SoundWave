@@ -7,6 +7,7 @@ const MediaItem = ({ data, onClick }) => {
     if (onClick) return onClick(data.id);
     //defauly
   };
+  // console.log(data);
   return (
     <div
       onClick={handleClick}
@@ -21,7 +22,8 @@ const MediaItem = ({ data, onClick }) => {
         />
       </div>
       <div className="flex flex-col gap-y-1 overflow-hidden">
-        <p className="text-white truncate">{data.titlt}</p>
+        <p className="text-white truncate">{data.title}</p>
+        {/* spelling of title was wrong */}
         <p className=" text-neutral-400 text-sm truncate">{data.author}</p>
       </div>
     </div>

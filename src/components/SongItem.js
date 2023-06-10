@@ -2,7 +2,7 @@
 
 import useLoadImage from "@/hooks/useLoadImage";
 import Image from "next/image";
-import PlayButton from "./PlayeButton";
+import PlayButton from "./PlayButton";
 
 const SongItem = ({ data, onClick }) => {
   const imgPath = useLoadImage(data);
@@ -67,7 +67,7 @@ const SongItem = ({ data, onClick }) => {
               right-5
             "
       >
-        Play
+        {/* Play */}
         <PlayButton />
       </div>
     </div>
