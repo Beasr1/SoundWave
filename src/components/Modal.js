@@ -3,17 +3,9 @@ import { IoMdClose } from "react-icons/io";
 
 const Modal = ({ isOpen, onChange, title, description, children }) => {
   return (
-    /*
     <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
       <Dialog.Portal>
-        <Dialog.Overlay
-          className="
-            bg-neutral-900/90 
-            backdrop-blur-sm 
-            fixed 
-            inset-0
-          "
-        />
+        <Dialog.Overlay className="bg-neutral-900/90 backdrop-blur-sm fixed inset-0" />
         <Dialog.Content
           className="
             fixed 
@@ -37,27 +29,16 @@ const Modal = ({ isOpen, onChange, title, description, children }) => {
             focus:outline-none
           "
         >
-          <Dialog.Title
-            className="
-              text-xl 
-              text-center 
-              font-bold 
-              mb-4
-            "
-          >
+          <Dialog.Title className="text-xl text-center font-bold mb-4">
             {title}
           </Dialog.Title>
-          <Dialog.Description
-            className="
-              mb-5 
-              text-sm 
-              leading-normal 
-              text-center
-            "
-          >
+
+          <Dialog.Description className="mb-5 text-sm leading-normal text-center">
             {description}
           </Dialog.Description>
+
           <div>{children}</div>
+
           <Dialog.Close asChild>
             <button
               className="
@@ -83,8 +64,6 @@ const Modal = ({ isOpen, onChange, title, description, children }) => {
         </Dialog.Content>
       </Dialog.Portal>
     </Dialog.Root>
-    */
-    <div>modal</div>
   );
 };
 

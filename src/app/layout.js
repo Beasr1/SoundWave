@@ -4,6 +4,8 @@ import Sidebar from "@/components/Sidebar";
 import SupabaseProvider from "@/providers/SupabaseProvider";
 import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
+import ToasterProvider from "@/providers/ToasterProvider";
+import getSongsByUserid from "./actions/getSongsByUserid";
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,15 +13,19 @@ export const metadata = {
   description: "A Media Player",
 };
 
-export default function RootLayout({ children }) {
+export const revalidate = 0;
+
+export default async function RootLayout({ children }) {
+  const userSongs = await getSongsByUserid();
   return (
     <html lang="en">
       <body className={font.className}>
         hey
+        <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
-            <Sidebar>{children}</Sidebar>
+            <Sidebar songs={userSongs}>{children}</Sidebar>
           </UserProvider>
         </SupabaseProvider>
       </body>
