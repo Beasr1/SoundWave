@@ -7,6 +7,7 @@ import useAuthModal from "@/hooks/useAuthModal";
 import useUploadModal from "@/hooks/useUploadModal";
 import { UseUser } from "@/hooks/useUser";
 import MediaItem from "./MediaItem";
+import useOnPlay from "@/hooks/useOnPlay";
 // import useSubscribeModal from "@/hooks/useSubscribeModal";
 // import useOnPlay from "@/hooks/useOnPlay";
 
@@ -20,7 +21,7 @@ const Library = (props) => {
   const authModal = useAuthModal();
   //   const subscribeModal = useSubscribeModal();
 
-  //   const onPlay = useOnPlay(songs);
+  const onPlay = useOnPlay(songs);
 
   const onClick = () => {
     if (!user) return authModal.onOpen();
@@ -46,7 +47,13 @@ const Library = (props) => {
       </div>
       <div className="flex flex-col gap-y-2 mt-4 px-3">
         {songs.map((item) => (
-          <MediaItem onClick={() => {}} key={item.id} data={item} />
+          <MediaItem
+            onClick={(id) => {
+              onPlay(id);
+            }}
+            key={item.id}
+            data={item}
+          />
         ))}
       </div>
     </div>

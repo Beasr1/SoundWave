@@ -21,7 +21,6 @@ const ModalProvider = ({ products }) => {
 
   return (
     <>
-      Modal
       <AuthModal />
       <UploadModal />
       {/* <AuthModal />

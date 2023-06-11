@@ -6,6 +6,7 @@ import UserProvider from "@/providers/UserProvider";
 import ModalProvider from "@/providers/ModalProvider";
 import ToasterProvider from "@/providers/ToasterProvider";
 import getSongsByUserid from "./actions/getSongsByUserid";
+import Player from "@/components/Player";
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -20,12 +21,12 @@ export default async function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={font.className}>
-        hey
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
             <ModalProvider />
             <Sidebar songs={userSongs}>{children}</Sidebar>
+            <Player />
           </UserProvider>
         </SupabaseProvider>
       </body>
