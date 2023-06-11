@@ -16,7 +16,7 @@
     "@supabase/auth-ui-shared": "^0.1.6",
     "@supabase/supabase-js": "^2.24.0",
     "autoprefixer": "10.4.14",
-    "next": "13.4.4",
+    "next": "13.4.1",
     "next-auth": "^4.22.1",
     "postcss": "8.4.24",
     "query-string": "^8.1.0",
