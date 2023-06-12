@@ -75,6 +75,7 @@ const PlayerContent = ({ song, songUrl }) => {
     <div className="grid grid-cols-2 md:grid-cols-3 h-full">
       <div className="flex w-full justify-start">
         <div className="flex items-center gap-x-4">
+          {/* no on click */}
           <MediaItem data={song} />
           <LikeButton songId={song.id} />
         </div>
