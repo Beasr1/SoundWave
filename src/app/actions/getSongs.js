@@ -14,6 +14,7 @@ const getSongs = async () => {
     .order("created_at", { ascending: false });
 
   if (error) {
+    console.log("get songs");
     console.log(error);
   }
 

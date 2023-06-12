@@ -22,8 +22,10 @@ export const MyUserContextProvider = (props) => {
     supabase
       .from("subscriptions")
       .select("*,prices(*,products(*))")
-      .in("status", ["trialing", "active"]);
-  //.single();
+      .in("status", ["trialing", "active"])
+      .single();
+  //without single it returns array
+
   //single throws error when none retuned or multiple
 
   useEffect(() => {
@@ -59,6 +61,7 @@ export const MyUserContextProvider = (props) => {
     isLoading: isLoadingData || isLoadingUser,
     subscription,
   };
+  //console.log(value);
 
   return <UserContext.Provider value={value} {...props} />;
 };

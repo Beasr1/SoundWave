@@ -36,7 +36,7 @@ const UploadModal = () => {
   const onSubmit = async (values) => {
     //upload to supabase
     console.log("SUBMITTING");
-    console.log(values);
+    //console.log(values);
     try {
       setIsLoading(true);
       const imageFile = values.image?.[0];

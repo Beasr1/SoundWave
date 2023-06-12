@@ -19,6 +19,7 @@ const getLikedSongs = async () => {
   //liked songs from currently logged in user
 
   if (error) {
+    console.log("get liked songs");
     console.log(error);
     return [];
   }

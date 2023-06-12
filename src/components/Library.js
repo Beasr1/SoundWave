@@ -8,27 +8,29 @@ import useUploadModal from "@/hooks/useUploadModal";
 import { UseUser } from "@/hooks/useUser";
 import MediaItem from "./MediaItem";
 import useOnPlay from "@/hooks/useOnPlay";
-// import useSubscribeModal from "@/hooks/useSubscribeModal";
+import useSubscribeModal from "@/hooks/useSubscribeModal";
 // import useOnPlay from "@/hooks/useOnPlay";
 
 // import MediaItem from "./MediaItem";
 
 const Library = (props) => {
   const { songs } = props;
+  //console.log(songs);
 
-  const { user } = UseUser();
+  const { user, subscription } = UseUser();
   const uploadModal = useUploadModal();
   const authModal = useAuthModal();
-  //   const subscribeModal = useSubscribeModal();
+  const subscribeModal = useSubscribeModal();
 
   const onPlay = useOnPlay(songs);
 
   const onClick = () => {
     if (!user) return authModal.onOpen();
 
-    //   if (!subscription) {
-    //     return subscribeModal.onOpen();
-    //   }
+    if (!subscription) {
+      //made library for only premium users
+      return subscribeModal.onOpen();
+    }
     return uploadModal.onOpen();
   };
 

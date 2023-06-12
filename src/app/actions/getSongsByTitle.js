@@ -24,7 +24,7 @@ const getSongsByTitle = async ({ title }) => {
     .order("created_at", { ascending: false });
 
   if (error) {
-    console.log(error);
+    console.log("get songs by title", error);
   }
 
   return data || [];

@@ -1,3 +1,6 @@
+"use client";
+//making this client side solved the issue
+
 import { createMiddlewareClient } from "@supabase/auth-helpers-nextjs";
 import { NextResponse } from "next/server";
 

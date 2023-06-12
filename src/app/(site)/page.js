@@ -7,6 +7,7 @@ export const revalidate = 0;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 const Home = async () => {
   const songs = await getSongs();
+  //console.log(songs);
   //await wait(5000);
   return (
     <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
