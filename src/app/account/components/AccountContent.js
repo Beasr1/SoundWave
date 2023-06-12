@@ -53,7 +53,7 @@ const AccountContent = () => {
           <p>
             You are currently on the
             <b> {subscription?.prices?.products?.name} </b>
-            plan.
+            plan. (little change)
           </p>
           <Button
             disabled={loading || isLoading}
