@@ -44,8 +44,8 @@ const SubscribeModal = ({ products }) => {
       return authModel.onOpen();
     }
 
-    console.log(subscription);
-    console.log(user);
+    // console.log(subscription);
+    // console.log(user);
     if (subscription) {
       setPriceIdLoading(undefined);
       return toast("Already subscribed");
