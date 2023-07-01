@@ -9,3 +9,12 @@ body,
   background-color: black;
   color-scheme: dark;
 }
+
+/* This is the id of the div created by the Particles component */
+#tsparticles {  
+  height: 100%;
+  width: 100%;
+  /* made it position absoute to make it into container took 2 whole days to get it perfect */
+  position: absolute;
+  overflow : hidden;
+}

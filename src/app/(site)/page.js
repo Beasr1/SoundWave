@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 import getSongs from "../actions/getSongs";
 import PageContent from "./components/PageContent";
+import ParticleProvider from "@/particles/ParticleProvider";
 
 export const revalidate = 0;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -10,8 +11,9 @@ const Home = async () => {
   //console.log(songs);
   //await wait(5000);
   return (
-    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
-      Hello SoundWave
+    //made parent of particle relative so particle can become absoute and cover whole background
+    <div className=" relative bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
+      <ParticleProvider />
       <Header>
         <div className="mb-2">
           <h1 className="text-white text-3xl font-semibold">Welcome back</h1>
@@ -24,6 +26,7 @@ const Home = async () => {
           </div>
         </div>
       </Header>
+
       <div className="mt-2 mb-7 px-6">
         <div className="flex justify-between items-center">
           <h1 className="text-white text-2xl font-semibold">Newest songs</h1>
