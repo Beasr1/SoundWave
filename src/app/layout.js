@@ -28,10 +28,7 @@ export default async function RootLayout({ children }) {
         <ToasterProvider />
         <SupabaseProvider>
           <UserProvider>
-            {/* <ParticleProvider /> */}
-
             <ModalProvider products={products} />
-
             <Sidebar songs={userSongs}>{children}</Sidebar>
             <Player />
           </UserProvider>

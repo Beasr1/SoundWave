@@ -8,13 +8,17 @@ body,
   height: 100%;
   background-color: black;
   color-scheme: dark;
+  --primary-color: #100015;
+  --secondary-color: #0e7490;
 }
 
+/* Custom id */
 /* This is the id of the div created by the Particles component */
-#tsparticles {  
+/* made it position absoute to make it into container took 2 whole days to get it perfect */
+/* #tsparticles {  
   height: 100%;
   width: 100%;
-  /* made it position absoute to make it into container took 2 whole days to get it perfect */
+  
   position: absolute;
   overflow : hidden;
-}
+} */

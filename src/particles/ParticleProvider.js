@@ -1,10 +1,17 @@
 "use client";
 
+/*
+used 
+https://vincentgarreau.com/particles.js/
+as my testing partener
+*/
 import Particles from "react-tsparticles";
 import { useCallback } from "react";
 import { loadFull } from "tsparticles";
-
-const ParticleProvider = () => {
+import { theme } from "../../tailwind.config";
+const secColor = theme.extend.colors.secondary;
+console.log(secColor);
+const ParticleProvider = ({ id, zIndex }) => {
   const particlesInit = useCallback(async (engine) => {
     console.log(engine);
     // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
@@ -14,40 +21,46 @@ const ParticleProvider = () => {
   }, []);
 
   const particlesLoaded = useCallback(async (container) => {
+    //container.element.style.zIndex = "-10";
     await console.log(container);
   }, []);
 
   const options = {
     // background: {
-    //   color: "#0d47a1",
+    //   //color: "#0d47a1",
+    //   z:-10,
     // },
     fullScreen: {
       enable: false,
     },
     interactivity: {
+      //detect_on: "window",
       events: {
         onClick: {
           enable: true,
-          mode: "push",
+          //mode: "push",
+          mode: "repulse",
         },
         onHover: {
           enable: true,
-          mode: "repulse",
+          //mode: "repulse",//grab and repulse both look awesome when dist is less
+          mode: "grab",
         },
         resize: true,
       },
       modes: {
         bubble: {
+          //looks good when config correctly
           distance: 400,
           duration: 2,
           opacity: 0.8,
           size: 40,
         },
         push: {
-          quantity: 4,
+          quantity: 1, //only add 1 if do
         },
         repulse: {
-          distance: 200,
+          distance: 65,
           duration: 0.4,
         },
       },
@@ -57,7 +70,9 @@ const ParticleProvider = () => {
         value: "#ffffff",
       },
       links: {
-        color: "#ffffff",
+        //color: "#A020F0", //originally ffffff
+        //color: "#41fdfe",//pure cyan
+        color: `${secColor}`, //merged cyan
         distance: 150,
         enable: true,
         opacity: 0.5,
@@ -67,13 +82,12 @@ const ParticleProvider = () => {
         enable: true,
       },
       move: {
-        direction: "none",
+        direction: "bottom",
         enable: true,
-        outMode: "bounce",
+        outMode: "out",
         random: true,
+        straight: true,
         speed: 1,
-        straight: false,
-        bounce: false,
       },
       number: {
         density: {
@@ -96,19 +110,15 @@ const ParticleProvider = () => {
   };
   return (
     <Particles
-      id="tsparticles"
+      //id="tsparticles"
+      //damn it chatgpt i was stuck on it for countless hours and you solved it in sec
+      //though i knew exactly what the prob was and instead of experimenting here i was on google
+      id={id} // Use the unique ID as the id prop for the Particles component
       init={particlesInit}
       loaded={particlesLoaded}
       options={options}
-      // style={{
-      //   position: "relative",
-      //   top: "0",
-      //   left: "0",
-      //   height: "100%",
-      //   width: "100%",
-      //   margin: "0",
-      //   padding: "0",
-      // }}
+      className=" absolute h-full w-full overflow-hidden"
+      //style={{ position: "relative", zIndex: -10 }} // Set position and z-index
     />
   );
 };

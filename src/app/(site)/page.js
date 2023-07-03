@@ -12,8 +12,17 @@ const Home = async () => {
   //await wait(5000);
   return (
     //made parent of particle relative so particle can become absoute and cover whole background
-    <div className=" relative bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
-      <ParticleProvider />
+    //bg-neutral-900
+    //bg-[#280137]
+    //bg-purple-950
+    //bg-[#1f0c27]
+    <div className="relative z-0 bg-primary rounded-lg h-full w-full overflow-hidden overflow-y-auto ">
+      <div className="absolute -z-10 h-full w-full overflow-hidden overflow-y-auto">
+        <ParticleProvider id="particle-1" />
+      </div>
+
+      {/* I tried so hard but could make particle go z< so I made this increase */}
+      {/* <div className="relative z-10"> */}
       <Header>
         <div className="mb-2">
           <h1 className="text-white text-3xl font-semibold">Welcome back</h1>
@@ -36,6 +45,7 @@ const Home = async () => {
           <PageContent songs={songs} />
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };
