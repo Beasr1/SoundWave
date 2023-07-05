@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import SubscriptionContent from "./components/SubscriptionContent";
+import ProfileContent from "./components/ProfileContent";
 
 const Account = () => {
   return (
@@ -12,6 +13,7 @@ const Account = () => {
         </div>
       </Header>
       <SubscriptionContent />
+      <ProfileContent />
     </div>
   );
 };
