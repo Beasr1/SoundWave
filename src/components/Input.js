@@ -2,6 +2,8 @@ import React from "react";
 import { forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
+// placeholder:text-neutral-400
+//border-transparent
 const Input = React.forwardRef(
   ({ className, type, disabled, ...props }, ref) => {
     return (
@@ -12,9 +14,8 @@ const Input = React.forwardRef(
             flex 
             w-full 
             rounded-md 
-            bg-neutral-700
+            bg-primary
             border
-            border-transparent
             px-3 
             py-3 
             text-sm 
@@ -22,7 +23,8 @@ const Input = React.forwardRef(
             file:bg-transparent 
             file:text-sm 
             file:font-medium 
-            placeholder:text-neutral-400 
+            placeholder: text-neutral-200
+
             disabled:cursor-not-allowed 
             disabled:opacity-50
             focus:outline-none

@@ -7,6 +7,8 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 import { AiFillHeart, AiOutlineHeart } from "react-icons/ai";
+import { theme } from "../../tailwind.config";
+const secColor = theme.extend.colors.secondary;
 
 //wheter the current song is liked or not by the user
 const LikeButton = ({ songId }) => {
@@ -75,7 +77,8 @@ const LikeButton = ({ songId }) => {
       className="cursor-pointer hover:opacity-75 transition"
       onClick={handleLike}
     >
-      <Icon color={isLiked ? "#22c55e" : "white"} />
+      <Icon color={isLiked ? `${secColor}` : "white"} />
+      {/* "#22c55e" */}
     </button>
   );
 };
