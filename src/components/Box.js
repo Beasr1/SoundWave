@@ -3,10 +3,12 @@ import { twMerge } from "tailwind-merge";
 const Box = (props) => {
   const { children, className } = props;
   return (
+    // bg-neutral-900
     <div
       className={twMerge(
         `
-        bg-neutral-900
+       
+        bg-primary
         rounded-lg
         h-fit
         w-full

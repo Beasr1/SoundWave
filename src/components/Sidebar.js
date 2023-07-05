@@ -8,6 +8,7 @@ import SidebarItem from "./SidebarItem";
 import Library from "./Library";
 import usePlayer from "@/hooks/usePlayer";
 import { twMerge } from "tailwind-merge";
+import ParticleProvider from "@/particles/ParticleProvider";
 
 const Sidebar = ({ children, songs }) => {
   const pathname = usePathname();
@@ -30,6 +31,7 @@ const Sidebar = ({ children, songs }) => {
     [pathname]
   );
   return (
+    // zindex 0
     <div
       className={twMerge(
         `flex h-full`,
@@ -37,14 +39,23 @@ const Sidebar = ({ children, songs }) => {
       )}
     >
       <div className="hidden md:flex flex-col gap-y-2 bg-black h-full w-300 p-2">
-        <Box>
-          <div className="flex flex-col gap-y-4 px-5 py-4">
+        {/* Box of Home and search */}
+        <Box className="relative z-0">
+          <div className="absolute -z-10 h-full w-full overflow-hidden overflow-y-auto">
+            <ParticleProvider id="particle-2" />
+          </div>
+          <div className="flex flex-col gap-y-4 px-5 py-4 z-[9999]">
             {routes.map((item) => (
               <SidebarItem key={item.label} {...item} />
             ))}
           </div>
         </Box>
-        <Box className="overflow-y-auto h-full">
+
+        {/* Library */}
+        <Box className=" relative z-0 overflow-y-auto h-full">
+          <div className="absolute -z-10 h-full w-full overflow-hidden overflow-y-auto">
+            <ParticleProvider id="particle-3" />
+          </div>
           <Library songs={songs} />
         </Box>
       </div>

@@ -59,19 +59,34 @@ module.exports = {
         "2xl": "1536px",
       },
       colors: {
-        headingColor: "#2e2e2e",
-        textColor: "#515151",
-        cartNumBg: "#e80013",
-        primary: "#f5f3f3",
-        cardOverlay: "rgba(256,256,256,0.4)",
-        darkOverlay: "rgba(0,0,0,0.5)",
-        lightOverlay: "rgba(256,256,256,0.2)",
-        lighttextGray: "#9ca0ab",
-        card: "rgba(256,256,256,0.8)",
-        cartBg: "#282a2c",
-        cartItem: "#2e3033",
-        cartTotal: "#343739",
-        loaderOverlay: "rgba(256,256,256,0.1)",
+        //primary: "#1f0c27",//midnight
+        primary: "#100015",
+        //primary_bright: "#3c1a47",
+        //primary_bright: "#540d6d",
+        primary_bright: "#7b1fa2", //purple 700
+        play_button: "#aa00ff", //purple-700-accent
+        //drop_shadow: "#46063C", //purple 900
+        drop_shadow: "#355F5F", //some variation of cyan
+        //primary: `${var(--primary-color)}`,
+        //secondary: `${var(--secondary-color)}`,
+
+        //secondary: "cyan-700",
+        secondary: "#0e7490", //dark cyan
+        //secondary: "#9C27B0", //purple 500
+
+        // headingColor: "#2e2e2e",
+        // textColor: "#515151",
+        // cartNumBg: "#e80013",
+        // primary: "#f5f3f3",
+        // cardOverlay: "rgba(256,256,256,0.4)",
+        // darkOverlay: "rgba(0,0,0,0.5)",
+        // lightOverlay: "rgba(256,256,256,0.2)",
+        // lighttextGray: "#9ca0ab",
+        // card: "rgba(256,256,256,0.8)",
+        // cartBg: "#282a2c",
+        // cartItem: "#2e3033",
+        // cartTotal: "#343739",
+        // loaderOverlay: "rgba(256,256,256,0.1)",
       },
       // backgroundImage: {
       //   "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import ListItem from "@/components/ListItem";
 import getSongs from "../actions/getSongs";
 import PageContent from "./components/PageContent";
+import ParticleProvider from "@/particles/ParticleProvider";
 
 export const revalidate = 0;
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -10,8 +11,18 @@ const Home = async () => {
   //console.log(songs);
   //await wait(5000);
   return (
-    <div className="bg-neutral-900 rounded-lg h-full w-full overflow-hidden overflow-y-auto">
-      Hello SoundWave
+    //made parent of particle relative so particle can become absoute and cover whole background
+    //bg-neutral-900
+    //bg-[#280137]
+    //bg-purple-950
+    //bg-[#1f0c27]
+    <div className="relative z-0 bg-primary rounded-lg h-full w-full overflow-hidden overflow-y-auto ">
+      <div className="absolute -z-10 h-full w-full overflow-hidden overflow-y-auto">
+        <ParticleProvider id="particle-1" />
+      </div>
+
+      {/* I tried so hard but could make particle go z< so I made this increase */}
+      {/* <div className="relative z-10"> */}
       <Header>
         <div className="mb-2">
           <h1 className="text-white text-3xl font-semibold">Welcome back</h1>
@@ -24,6 +35,7 @@ const Home = async () => {
           </div>
         </div>
       </Header>
+
       <div className="mt-2 mb-7 px-6">
         <div className="flex justify-between items-center">
           <h1 className="text-white text-2xl font-semibold">Newest songs</h1>
@@ -33,6 +45,7 @@ const Home = async () => {
           <PageContent songs={songs} />
         </div>
       </div>
+      {/* </div> */}
     </div>
   );
 };

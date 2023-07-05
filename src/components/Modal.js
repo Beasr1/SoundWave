@@ -6,12 +6,13 @@ const Modal = ({ isOpen, onChange, title, description, children }) => {
     <Dialog.Root open={isOpen} defaultOpen={isOpen} onOpenChange={onChange}>
       <Dialog.Portal>
         <Dialog.Overlay className="bg-neutral-900/90 backdrop-blur-sm fixed inset-0" />
+        {/* bg-neutral-800  */}
         <Dialog.Content
           className="
             fixed 
             drop-shadow-md 
             border 
-            border-neutral-700 
+            border-drop_shadow
             top-[50%] 
             left-[50%] 
             max-h-full 
@@ -24,7 +25,7 @@ const Modal = ({ isOpen, onChange, title, description, children }) => {
             translate-x-[-50%] 
             translate-y-[-50%] 
             rounded-md 
-            bg-neutral-800 
+            bg-primary
             p-[25px] 
             focus:outline-none
           "

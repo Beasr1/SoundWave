@@ -33,7 +33,10 @@ const Header = (props) => {
   return (
     <div
       className={twMerge(
-        `h-fit bg-gradient-to-b from-emerald-800 p-6`,
+        //`h-fit bg-gradient-to-b from-cyan-700 p-6`,
+        //from secondary
+        `h-fit bg-gradient-to-b from-primary_bright p-6`,
+        // `h-fit bg-gradient-to-b from-emerald-800 p-6`,
         className
       )}
     >
@@ -81,7 +84,7 @@ const Header = (props) => {
             </div>
           ) : (
             <>
-              <div>Logged out</div>
+              {/* <div>Logged out</div> */}
               <div>
                 <Button
                   className="bg-transparent text-neutral-300 font-medium"

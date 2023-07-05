@@ -8,6 +8,7 @@ import ToasterProvider from "@/providers/ToasterProvider";
 import getSongsByUserid from "./actions/getSongsByUserid";
 import Player from "@/components/Player";
 import getActiveProductsWithPrices from "./actions/getActiveProductsWithPrices";
+import ParticleProvider from "@/particles/ParticleProvider";
 const font = Inter({ subsets: ["latin"] });
 
 export const metadata = {

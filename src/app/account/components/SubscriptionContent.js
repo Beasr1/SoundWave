@@ -10,7 +10,7 @@ import useSubscribeModal from "@/hooks/useSubscribeModal";
 import { toast } from "react-hot-toast";
 
 //activate the test link  in stripe
-const AccountContent = () => {
+const SubscriptionContent = () => {
   const router = useRouter();
   const subscribeModal = useSubscribeModal();
   const { isLoading, subscription, user } = UseUser();
@@ -53,7 +53,7 @@ const AccountContent = () => {
           <p>
             You are currently on the
             <b> {subscription?.prices?.products?.name} </b>
-            plan.
+            plan. (little change)
           </p>
           <Button
             disabled={loading || isLoading}
@@ -68,4 +68,4 @@ const AccountContent = () => {
   );
 };
 
-export default AccountContent;
+export default SubscriptionContent;
