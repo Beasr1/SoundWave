@@ -1,3 +1,6 @@
+## MY DOCUMENTATION : 
+[`SoundWave`](https://docs.google.com/document/d/1_oNme1oDC_TxwIMPG4BOTygi93Q4vyXSLkU7457nQYE/edit?usp=sharing)
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
